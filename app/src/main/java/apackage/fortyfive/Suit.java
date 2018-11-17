@@ -1,7 +1,27 @@
 package apackage.fortyfive;
 
 public enum Suit {
-    SPADE,HEART,CLUB,DIAMOND;
+    SPADE{
+        @Override
+        public Color getColor(){
+            return Color.BLACK;
+        }
+    },HEART{
+        @Override
+        public Color getColor(){
+            return Color.RED;
+        }
+    },CLUB{
+        @Override
+        public Color getColor(){
+            return Color.BLACK;
+        }
+    },DIAMOND{
+        @Override
+        public Color getColor(){
+            return Color.RED;
+        }
+    };
 
     public static Suit parse(Integer number){
         Suit output = null;
@@ -22,4 +42,6 @@ public enum Suit {
 
         return output;
     }
+
+    public abstract Color getColor();
 }
